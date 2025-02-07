@@ -31,3 +31,18 @@ In this milestone, we have successfully added the layout for the Login Page. Thi
 - **Submit Button**: A button for users to submit their login credentials.
 - **Error Handling**: Basic error handling to inform users of any issues with their input.
 
+
+## Milestone 3: Backend Added
+
+In this milestone, we have successfully added the backend for our e-commerce application. This includes the following key features:
+
+### Key Features:
+- **API Endpoints**: Implemented several API endpoints for handling user authentication, product management, and order processing.
+- **Database Integration**: Integrated MongoDB to store and retrieve data, ensuring a seamless connection between the frontend and backend.
+- **Authentication**: Added user authentication using JWT (JSON Web Tokens) to secure user data and restrict access to certain endpoints.
+- **Error Handling**: Implemented comprehensive error handling to provide informative responses and ensure a smooth user experience.
+- **Middleware**: Used middleware to handle tasks such as logging, parsing request bodies, and managing CORS (Cross-Origin Resource Sharing).
+
+This milestone lays the foundation for the backend of our e-commerce application, providing essential functionality to support user interactions and data management. We will continue to build on this foundation in upcoming milestones to enhance the features and improve the user experience.
+
+
