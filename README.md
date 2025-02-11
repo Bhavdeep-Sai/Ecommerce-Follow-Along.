@@ -65,4 +65,12 @@ A controller is a part of the server that manages what happens when someone inte
 Sometimes, users want to upload files like profile pictures. Multer is a tool that makes it easy to upload files to our server. It helps us store user images in the backend, like a virtual file cabinet for storing pictures.
 
 
+## Milestone 5: Signup Page Added
 
+In this milestone, we have successfully added the Signup page to our e-commerce application. This includes the following key features:
+- **User Registration Form**: A form that allows new users to register by providing their name, email, password, and profile picture.
+- **Form Validation**: Implemented validation for the name, email, and password fields to ensure data integrity and provide feedback to the user.
+- **Password Visibility Toggle**: Added an eye icon that allows users to toggle the visibility of the password field for convenience.
+- **File Upload**: Users can upload a profile picture during registration. The image is displayed as a preview before submission.
+- **Form Submission**: On successful validation, the form data is submitted to the server using Axios. The server processes the registration request and stores the user data in the database.
+- **Error Handling**: Basic error handling to inform users of any issues with their input.
