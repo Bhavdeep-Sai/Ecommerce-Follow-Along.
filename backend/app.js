@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 // Import Routes
 const user = require("./controller/userRouter");
-app.use("/api/v2/user", user);
+app.use("/user", user);
 
 // Error Handling Middleware
 app.use(ErrorHandler);
