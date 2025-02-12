@@ -79,5 +79,3 @@ In this milestone, we have successfully connected the Signup page to the databas
 - **Encrypted Passwords**: Used bcrypt to hash user passwords before storing them in the database for added security.
 - **Improved User Experience**: Users now receive a confirmation message after successful registration.
 
-With this milestone, our signup functionality is fully functional and integrated with the backend, allowing seamless user registration and database storage.
-
