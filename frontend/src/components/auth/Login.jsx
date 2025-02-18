@@ -16,7 +16,7 @@ const Signin = () => {
 
     if (storedUser && storedUser.email === email && storedUser.password === password) {
       console.log("Login successful!");
-      navigate("/"); // Redirect to home page
+      navigate("/Home"); // Redirect to home page
     } else {
       setError("Invalid email or password");
     }
