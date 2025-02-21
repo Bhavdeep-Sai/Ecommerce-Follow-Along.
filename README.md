@@ -109,7 +109,22 @@ This milestone focuses on creating an engaging Home Page where users can easily 
 A React.js frontend to interact with the **Product API** (Milestone 10). Users can add and view products in a simple UI.
 
 ## 🚀 Features
-- Display a list of products.
+- Display a form to add products.
 - Form to add a new product.
 - Connects to **Express & MongoDB API** (Milestone 10).
+
+
+# 🛒 Product API (Milestone 10)
+
+A simple Express & MongoDB API to store product details with validation using Mongoose.
+
+## 🚀 Features
+- Create a product with **name, description, price, and image URL**.
+- Validates input before storing data in MongoDB.
+- RESTful **POST endpoint** to add products.
+
+
+
+
+
 
