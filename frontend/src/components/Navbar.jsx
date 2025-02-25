@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="h-16 bg-gray-900 text-white flex items-center justify-between px-6 shadow-lg">
       {/* Website Name */}
-      <h1 className="text-2xl font-semibold tracking-wide">My Website</h1>
+      <h1 className="text-2xl font-semibold tracking-wide">Game <span>Universe</span></h1>
       
       {/* Buttons */}
       <div className="space-x-4">
