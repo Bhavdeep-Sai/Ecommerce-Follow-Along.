@@ -16,11 +16,11 @@ const Product = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-gray-800 to-blue-600 p-6">
+        <div className="min-h-screen mx-10 bg-gray-700">
             <h1 className="text-5xl font-bold text-center text-white mb-10">Our Products</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="flex gap-10 flex-wrap">
                 {products.map((product) => (
-                    <Card
+                    <Card this is teh frontend code 
                         key={product._id}
                         name={product.name}
                         price={product.price}
