@@ -20,7 +20,8 @@ const Product = () => {
     }, []);
 
     return (
-        <div className="min-h-screen mx-10 bg-gray-700">
+        <div className="flex justify-center mb-20  items-center m-auto w-300">
+        <div className="min-h-screen m-auto bg-gray-700 flex flex-col items-center justify-center">
             <h1 className="text-5xl font-bold text-center text-white mb-10">Our Products</h1>
             <div className="flex gap-10 flex-wrap">
                 {products.map((product) => (
@@ -32,6 +33,7 @@ const Product = () => {
                     />
                 ))}
             </div>
+        </div>
         </div>
     );
 };

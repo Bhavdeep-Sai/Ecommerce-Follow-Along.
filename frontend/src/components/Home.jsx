@@ -5,8 +5,12 @@ const Home = () => {
   // Example list of products
   return(
     <div className="flex flex-col gap-10 bg-gray-700">
+      <div>
     <Navbar/>
+    </div>
+    <div className="mt-15">
     <Showcase/>
+    </div>
     <Product />
     </div>
   )

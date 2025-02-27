@@ -27,30 +27,39 @@ const ProductForm = () => {
     };
 
     const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      const formData = new FormData();
-      formData.append("name", productData.name);
-      formData.append("price", productData.price);
-      productData.images.forEach((image) => formData.append("images", image));
-  
-      try {
-          const token = localStorage.getItem("token");  // ⬅️ Get token from localStorage
-  
-          await axios.post("http://localhost:8000/products/add", formData, {
-              headers: { 
-                  "Content-Type": "multipart/form-data",
-                  "Authorization": `Bearer ${token}`,  // ⬅️ Send token in the headers
-              },
-          });
-  
-          navigate("/");
-      } catch (error) {
-          console.error("Error adding product:", error.response ? error.response.data : error.message);
-          alert("Failed to add product. Make sure you're logged in!");
-      }
-  };
-  
+        e.preventDefault();
+    
+        const formData = new FormData();
+        formData.append("name", productData.name);
+        formData.append("price", productData.price);
+        productData.images.forEach((image) => formData.append("images", image));
+    
+        try {
+            const token = localStorage.getItem("token");  
+    
+            if (!token) {
+                console.error("❌ No token found in localStorage!");
+                alert("You must be logged in to add a product.");
+                return;
+            }
+    
+            console.log("🔹 Sending token:", token);  // 🛠 Debugging line
+    
+            await axios.post("http://localhost:8000/products/add", formData, {
+                headers: { 
+                    "Content-Type": "multipart/form-data",
+                    "Authorization": `Bearer ${token}`,
+                },
+            });
+    
+            alert("✅ Product added successfully!");
+            navigate("/");
+        } catch (error) {
+            console.error("❌ Error adding product:", error.response ? error.response.data : error.message);
+            alert("Failed to add product. Make sure you're logged in!");
+        }
+    };
+    
     return (
         <div className="flex items-center justify-center h-screen w-screen">
             <div className="p-6 max-w-lg mx-auto bg-gray-200 shadow-xl rounded-lg">

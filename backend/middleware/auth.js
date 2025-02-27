@@ -12,17 +12,27 @@ const authenticate = async (req, res, next) => {
 
     const token = authHeader.split(" ")[1]; // Extract the actual token
 
-    const decoded = jwt.verify(token, process.env.SECRET_KEY);
-
-    const user = await User.findById(decoded.userId).select("-password"); // Fetch user, exclude password
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
+    // ✅ Ensure SECRET_KEY is set, fallback if missing
+    const secretKey = process.env.SECRET_KEY || "fallback_secret";
+    let decoded;
+    
+    try {
+      decoded = jwt.verify(token, secretKey); // Verify token
+    } catch (error) {
+      return res.status(403).json({ message: "Invalid or expired token" });
     }
 
-    req.user = user; // Store user info in request
-    next(); // Continue to next middleware/route
+    // ✅ Fetch user from DB (excluding password)
+    const user = await User.findById(decoded.userId).select("-password");
+    if (!user) {
+      return res.status(404).json({ message: "User not found. Authentication failed." });
+    }
+
+    req.user = user; // Attach user info to request
+    next(); // ✅ Continue to next middleware
   } catch (error) {
-    return res.status(401).json({ message: "Invalid Token" });
+    console.error("Auth Middleware Error:", error);
+    return res.status(500).json({ message: "Authentication error" });
   }
 };
 

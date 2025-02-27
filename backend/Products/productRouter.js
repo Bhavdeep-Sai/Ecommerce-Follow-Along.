@@ -6,8 +6,14 @@ const upload = require("../multer");
 
 router.post("/add", authenticate, upload.array("images", 5), async (req, res) => {
     try {
+        console.log("🔹 Checking req.user:", req.user); // 🛠 Debugging line
+
+        if (!req.user) {
+            return res.status(401).json({ message: "Unauthorized! User not authenticated." });
+        }
+
         const { name, price } = req.body;
-        const userId = req.user.userId;
+        const userId = req.user._id; // Ensure userId is taken from authenticated user
 
         if (!name || !price) {
             return res.status(400).json({ message: "All fields are required" });
@@ -19,10 +25,11 @@ router.post("/add", authenticate, upload.array("images", 5), async (req, res) =>
         await product.save();
         res.status(201).json({ message: "Product added successfully!", product });
     } catch (error) {
-        console.error("Error adding product:", error);
+        console.error("❌ Error adding product:", error);
         res.status(500).json({ message: "Server error", error: error.message });
     }
 });
+
 
 router.get("/", async (req, res) => {
     try {
