@@ -123,6 +123,9 @@ A simple Express & MongoDB API to store product details with validation using Mo
 - Validates input before storing data in MongoDB.
 - RESTful **POST endpoint** to add products.
 
+# Product endpoint 
+send all products which are updated by uploading form
+
 # Milestone 11: Dynamic Home Page
 
 ## Welcome to Milestone 11! 🌟
