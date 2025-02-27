@@ -119,9 +119,12 @@ A React.js frontend to interact with the **Product API** (Milestone 10). Users c
 A simple Express & MongoDB API to store product details with validation using Mongoose.
 
 ## 🚀 Features
-- Create a product with **name, description, price, and image URL**.
+- Create a product with **name, description, price, and image**.
 - Validates input before storing data in MongoDB.
 - RESTful **POST endpoint** to add products.
+
+# Product endpoint 
+send all products which are updated by uploading form
 
 # Milestone 11: Dynamic Home Page
 
