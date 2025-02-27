@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "E-commmerce data_base",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

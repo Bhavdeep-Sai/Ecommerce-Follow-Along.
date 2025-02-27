@@ -1,0 +1,15 @@
+meta {
+  name: Get-Request
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:8000/products/user-products
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2JkYmIyZGIwNzM4MWUzODI1ODA0ZjciLCJlbWFpbCI6ImRkaHNkYnNuaUBnbWFpbC5jb20iLCJpYXQiOjE3NDA0ODc0NzgsImV4cCI6MTc0MDQ5MTA3OH0.jq5kgIOQV5tUI7vW23x3i6VoEBYekZy55ctC4N_7zCI
+}
